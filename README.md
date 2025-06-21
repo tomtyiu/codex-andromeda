@@ -533,6 +533,14 @@ Codex runs model-generated commands in a sandbox. If a proposed command or file 
 <summary>Does it work on Windows?</summary>
 
 Not directly. It requires [Windows Subsystem for Linux (WSL2)](https://learn.microsoft.com/en-us/windows/wsl/install) - Codex has been tested on macOS and Linux with Node 22.
+Running the CLI outside of WSL2 will fail with an error like:
+
+```
+Error: Sandbox was mandated, but no sandbox is available!
+```
+
+Start a WSL2 shell (or set `CODEX_UNSAFE_ALLOW_NO_SANDBOX=1` if you understand the
+risks) before running `codex` on Windows.
 
 </details>
 
